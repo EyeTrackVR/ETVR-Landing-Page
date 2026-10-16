@@ -67,8 +67,9 @@ if (featuredVideo) {
     const initializeFeaturedVideo = () => {
         let captionsInitialized = false;
         const disableInitialCaptions = ({ target: player }) => {
-            if (captionsInitialized || player.getPlayerState() !== 1 || !player.getOptions().includes('captions')) return;
+            if (captionsInitialized || player.getPlayerState() !== 1) return;
             captionsInitialized = true;
+            player.setOption('captions', 'track', {});
             player.unloadModule('captions');
         };
         new window.YT.Player(featuredVideo, {
