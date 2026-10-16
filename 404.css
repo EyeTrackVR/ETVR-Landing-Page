@@ -1,0 +1,7 @@
+/* 404 page only. Everything else comes from styles.css. */
+.hero-single { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-block: 96px 76px; }
+.hero-single .hero-description { max-width: 60ch; }
+.feature h2 a { border-bottom: 1px solid transparent; transition: color .12s, border-color .12s; }
+.feature h2 a:hover, .feature h2 a:focus-visible { color: var(--accent); border-bottom-color: var(--accent); }
+@media (max-width: 1050px) { .hero-single { padding-block: 76px 58px; } }
+@media (max-width: 760px) { .hero-single { padding-block: 54px 40px; } }
