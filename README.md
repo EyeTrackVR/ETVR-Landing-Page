@@ -4,7 +4,9 @@ Static landing page for EyeTrackVR. Built with HTML, CSS, local SVG icons, and s
 
 ## Local preview
 
-Run `python3 -m http.server 4173` in this directory, then open http://localhost:4173.
+Run `python3 serve.py` in this directory, then open http://localhost:4173.
+
+`serve.py` is the stdlib server with one change: a missing path returns `404.html` with a real 404 status, the way GitHub Pages does. Plain `python3 -m http.server` shows its own error page instead, so use `serve.py` if you want to see the 404 locally.
 
 The page respects reduced-motion preferences and include accessible icon labels, keyboard focus states, and responsive layouts.
 
