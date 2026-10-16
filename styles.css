@@ -85,6 +85,11 @@ h2 { font-size: 32px; line-height: 1.25; font-weight: 500; letter-spacing: -1.2p
     .store-mark { display: none; }
     .store-content h2 { font-size: 23px; }
 }
+/* Eight nav items only fit at full padding above about 1260px. */
+@media (min-width: 1051px) and (max-width: 1260px) {
+    .nav-links { gap: 6px; }
+    .nav-link { padding: 10px 9px; font-size: 11.5px; }
+}
 @media (max-width: 1050px) {
     .topbar { flex-wrap: wrap; width: calc(100% - 32px); min-height: 76px; padding-block: 16px; gap: 12px; }
     .brand, .footer-brand { font-size: 15px; }
