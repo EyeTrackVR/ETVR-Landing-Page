@@ -1,6 +1,6 @@
 # ETVR-Landing-Page
 
-Static landing page for EyeTrackVR. Built with HTML, CSS, local SVG icons, and small JavaScript enhancements for cursor-following hover highlights and a mobile hamburger menu. Navigation and content remain usable without JavaScript.
+Static landing page for EyeTrackVR. Built with HTML, CSS, an SVG icon sprite, and small JavaScript enhancements for cursor-following hover highlights and a mobile hamburger menu. Navigation and content remain usable without JavaScript.
 
 ## Local preview
 
@@ -11,6 +11,10 @@ Run `python3 serve.py` in this directory, then open http://localhost:4173.
 The page respects reduced-motion preferences and include accessible icon labels, keyboard focus states, and responsive layouts.
 
 ## Icons
+
+`icons.svg` is a sprite built from official icon packs, with one exception: [Lucide](https://lucide.dev) for interface icons and [Phosphor Icons](https://phosphoricons.com) for the Discord mark. The GitHub mark is the site's original outline drawing, kept so it matches the line style. A comment at the top of the sprite maps each id to its source icon. To add or swap one, copy it from the pack and keep the pack's licence notice current in `ICON-LICENSES.md`. Stroke width, caps and joins are set in `styles.css` (`.icon`), so Lucide icons are used without their own stroke attributes.
+
+The favicon files are separate:
 
 `assets/favicon-32.png`, `assets/favicon.png` and `assets/apple-touch-icon.png` are generated from `logo_no_bg.png`. The logo is white on transparent, so each tile puts it on the `--background` colour, otherwise it disappears in a light browser tab. Regenerate them if the logo ever changes.
 
