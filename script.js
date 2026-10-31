@@ -19,6 +19,28 @@ for (const surface of document.querySelectorAll('.frosted')) {
     });
 }
 
+// The ambient bloom leans toward the cursor, easing in and out so it feels alive rather than attached.
+if (window.matchMedia('(pointer: fine)').matches) {
+    const root = document.documentElement;
+    const reach = 90;
+    let targetX = 0, targetY = 0, x = 0, y = 0, frame = 0;
+
+    const settle = () => {
+        x += (targetX - x) * 0.04;
+        y += (targetY - y) * 0.04;
+        root.style.setProperty('--glow-x', `${x.toFixed(1)}px`);
+        root.style.setProperty('--glow-y', `${y.toFixed(1)}px`);
+        frame = Math.abs(targetX - x) + Math.abs(targetY - y) > 0.1 ? requestAnimationFrame(settle) : 0;
+    };
+
+    window.addEventListener('pointermove', (event) => {
+        if (reducedMotion.matches) return;
+        targetX = (event.clientX / window.innerWidth - 0.5) * 2 * reach;
+        targetY = (event.clientY / window.innerHeight - 0.5) * 2 * reach;
+        if (!frame) frame = requestAnimationFrame(settle);
+    });
+}
+
 // Only collapse navigation after its controls are ready; links remain available without JS.
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
