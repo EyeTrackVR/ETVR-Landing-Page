@@ -22,13 +22,11 @@ The favicon files are separate:
 
 `assets/favicon-32.png`, `assets/favicon.png` and `assets/apple-touch-icon.png` are generated from `logo_no_bg.png`. The logo is white on transparent, so each tile puts it on a dark background, otherwise it disappears in a light browser tab. Regenerate them if the logo ever changes.
 
-The header uses two copies of the mark for the same reason: `assets/logo_tile.svg` (the white logo on a rounded dark tile) in light mode and `assets/logo_no_bg.svg` in dark mode. Both come from the docs repo.
+The header logo is `assets/logo_tile.svg`, the white logo on a rounded dark tile, in both themes. It comes from the docs repo.
 
 ## Link previews
 
 `index.html` carries Open Graph and Twitter card tags so sharing the site on Discord, X, Slack or in a message shows a title, description and image instead of a bare URL. The card is the compact kind (`twitter:card` is `summary`): the title and description with `assets/og-mark.png`, a 512x512 logo tile, as a small thumbnail. It is the same file the docs use, generated there by `vitepress/scripts/make_og_image.py`.
-
-The earlier wide banner is still in the repo but no longer referenced: `assets/og-image.png` (1200x630) and its source `tools/og-card.html`. To go back to it, point `og:image` and `twitter:image` at it, set the width and height to 1200 and 630, and set `twitter:card` to `summary_large_image`.
 
 The `og:` and `twitter:` tags use absolute URLs on `https://www.eyetrackvr.dev`, so they only resolve once pushed. `404.html` deliberately has no preview tags, it is marked `noindex`.
 

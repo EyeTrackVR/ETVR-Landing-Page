@@ -46,9 +46,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .brand { display: flex; gap: 10px; align-items: center; margin-right: auto; }
 .brand img { display: block; width: 30px; height: 30px; }
 .brand-vr { color: var(--accent); }
-/* The mark is white, so light mode shows it on a rounded dark tile. */
-.brand .mark-dark, .dark .brand .mark-light { display: none; }
-.dark .brand .mark-dark { display: block; }
+/* The logo is always the white mark on a rounded dark tile; in dark mode a hairline keeps the tile from melting into the page. */
+.dark .brand img { border-radius: 22%; box-shadow: 0 0 0 1px var(--line-strong); }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav-link { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border-radius: 8px; font-size: 15px; font-weight: 500; white-space: nowrap; color: var(--text); transition: color .15s; }
 .nav-link:hover { color: var(--accent); }
