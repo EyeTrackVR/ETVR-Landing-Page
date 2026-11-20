@@ -1,44 +1,15 @@
-// Keep hover highlights local to each frosted surface. Links work without JavaScript.
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-for (const surface of document.querySelectorAll('.frosted')) {
-    let frame;
-    surface.addEventListener('pointermove', (event) => {
-        if (event.pointerType === 'touch' || reducedMotion.matches) return;
-        const bounds = surface.getBoundingClientRect();
-        cancelAnimationFrame(frame);
-        frame = requestAnimationFrame(() => {
-            surface.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
-            surface.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
-        });
-    });
-    surface.addEventListener('pointerleave', () => {
-        cancelAnimationFrame(frame);
-        surface.style.removeProperty('--pointer-x');
-        surface.style.removeProperty('--pointer-y');
-    });
-}
-
-// The ambient bloom leans toward the cursor, easing in and out so it feels alive rather than attached.
-if (window.matchMedia('(pointer: fine)').matches) {
+// Theme: light by default, like the docs. The choice is remembered; an inline script in <head> applies it before first paint.
+const themeToggle = document.querySelector('.theme-toggle');
+if (themeToggle) {
     const root = document.documentElement;
-    const reach = 90;
-    let targetX = 0, targetY = 0, x = 0, y = 0, frame = 0;
-
-    const settle = () => {
-        x += (targetX - x) * 0.04;
-        y += (targetY - y) * 0.04;
-        root.style.setProperty('--glow-x', `${x.toFixed(1)}px`);
-        root.style.setProperty('--glow-y', `${y.toFixed(1)}px`);
-        frame = Math.abs(targetX - x) + Math.abs(targetY - y) > 0.1 ? requestAnimationFrame(settle) : 0;
-    };
-
-    window.addEventListener('pointermove', (event) => {
-        if (reducedMotion.matches) return;
-        targetX = (event.clientX / window.innerWidth - 0.5) * 2 * reach;
-        targetY = (event.clientY / window.innerHeight - 0.5) * 2 * reach;
-        if (!frame) frame = requestAnimationFrame(settle);
+    const label = () => themeToggle.setAttribute('aria-label', root.classList.contains('dark') ? 'Switch to light theme' : 'Switch to dark theme');
+    themeToggle.addEventListener('click', () => {
+        const dark = root.classList.toggle('dark');
+        try { localStorage.setItem('etvr-theme', dark ? 'dark' : 'light'); } catch (error) { /* private mode: the choice just lasts for this page */ }
+        label();
     });
+    label();
+    themeToggle.hidden = false;
 }
 
 // Only collapse navigation after its controls are ready; links remain available without JS.

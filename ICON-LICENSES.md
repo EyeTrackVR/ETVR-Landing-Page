@@ -4,7 +4,7 @@ The icons in `icons.svg` are taken from these packs. Their licence notices are r
 
 ## Lucide (interface icons)
 
-https://lucide.dev, ISC licence. `arrow-right`, `arrow-up-right`, `download` and `x` are derived from Feather and fall under the MIT licence below.
+https://lucide.dev, ISC licence. `arrow-right`, `arrow-up-right`, `download`, `moon`, `sun` and `x` are derived from Feather and fall under the MIT licence below.
 
 ```
 ISC License

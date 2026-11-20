@@ -1,6 +1,10 @@
 # ETVR-Landing-Page
 
-Static landing page for EyeTrackVR. Built with HTML, CSS, an SVG icon sprite, and small JavaScript enhancements for cursor-following hover highlights and a mobile hamburger menu. Navigation and content remain usable without JavaScript.
+Static landing page for EyeTrackVR. Built with HTML, CSS, an SVG icon sprite, and small JavaScript enhancements for the light/dark theme toggle and a mobile hamburger menu. Navigation and content remain usable without JavaScript.
+
+## Style
+
+The page shares its palette and type with the docs site ([EyeTrackVR-Docs](https://github.com/EyeTrackVR/EyeTrackVR-Docs), `vitepress/docs/src/styles/theme.css`): warm paper, near-black ink, the EyeTrackVR purple as the one accent, and Atkinson Hyperlegible for text. It opens in light mode; the toggle in the header switches to dark and remembers the choice. Keep it plain: no glows, gradients or decorative icons. If the tokens at the top of `styles.css` change, change them in the docs theme too.
 
 ## Local preview
 
@@ -16,13 +20,15 @@ The page respects reduced-motion preferences and include accessible icon labels,
 
 The favicon files are separate:
 
-`assets/favicon-32.png`, `assets/favicon.png` and `assets/apple-touch-icon.png` are generated from `logo_no_bg.png`. The logo is white on transparent, so each tile puts it on the `--background` colour, otherwise it disappears in a light browser tab. Regenerate them if the logo ever changes.
+`assets/favicon-32.png`, `assets/favicon.png` and `assets/apple-touch-icon.png` are generated from `logo_no_bg.png`. The logo is white on transparent, so each tile puts it on a dark background, otherwise it disappears in a light browser tab. Regenerate them if the logo ever changes.
+
+The header uses two copies of the mark for the same reason: `assets/logo_tile.svg` (the white logo on a rounded dark tile) in light mode and `assets/logo_no_bg.svg` in dark mode. Both come from the docs repo.
 
 ## Link previews
 
-`index.html` carries Open Graph and Twitter card tags so sharing the site on Discord, X, Slack or in a message shows a title, description and image instead of a bare URL. The image is `assets/og-image.png`, 1200x630.
+`index.html` carries Open Graph and Twitter card tags so sharing the site on Discord, X, Slack or in a message shows a title, description and image instead of a bare URL. The card is the compact kind (`twitter:card` is `summary`): the title and description with `assets/og-mark.png`, a 512x512 logo tile, as a small thumbnail. It is the same file the docs use, generated there by `vitepress/scripts/make_og_image.py`.
 
-`tools/og-card.html` is its source. Open it in a browser and screenshot the viewport at 1200x630 to regenerate, or use any headless capture. It is not part of the site, it just lives here so the card can be rebuilt later. The tagline on it is a separate element, so it can be dropped if the hero copy changes.
+The earlier wide banner is still in the repo but no longer referenced: `assets/og-image.png` (1200x630) and its source `tools/og-card.html`. To go back to it, point `og:image` and `twitter:image` at it, set the width and height to 1200 and 630, and set `twitter:card` to `summary_large_image`.
 
 The `og:` and `twitter:` tags use absolute URLs on `https://www.eyetrackvr.dev`, so they only resolve once pushed. `404.html` deliberately has no preview tags, it is marked `noindex`.
 
