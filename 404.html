@@ -13,13 +13,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet">
-    <script>try { if (localStorage.getItem('etvr-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}</script>
+    <script>try { var m = document.cookie.match(/(?:^|; )etvr-theme=(dark|light)/); if ((m ? m[1] : localStorage.getItem('etvr-theme')) === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}</script>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/404.css">
 
     <script src="/script.js" defer></script>
 </head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><nav class="topbar" aria-label="Main navigation"><a class="brand" href="/index.html" aria-label="EyeTrackVR home"><img src="/assets/logo_tile.svg" alt="" width="30" height="30"><span>EyeTrack<span class="brand-vr">VR</span></span></a><ul class="nav-links" id="nav-menu"><li><a class="nav-link" href="https://docs.eyetrackvr.dev/">Documentation</a></li><li><a class="nav-link" href="https://github.com/EyeTrackVR/EyeTrackVR/releases">Download</a></li><li><a class="nav-link" href="https://store.eyetrackvr.dev/">Store</a></li><li><a class="nav-link" href="https://discord.gg/e9QfQQC6Cn">Discord</a></li><li><a class="nav-link" href="https://github.com/eyetrackvr" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a class="nav-link" href="https://store.eyetrackvr.dev/pages/contact">Contact</a></li><li><a class="nav-link" href="https://ko-fi.com/prohurtz" target="_blank" rel="noopener noreferrer">Donate</a></li></ul><button class="theme-toggle icon-button" type="button" aria-label="Switch to dark theme" hidden><svg class="icon moon-icon" aria-hidden="true"><use href="/icons.svg#moon"></use></svg><svg class="icon sun-icon" aria-hidden="true"><use href="/icons.svg#sun"></use></svg></button><button class="menu-toggle icon-button" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false" hidden><svg class="icon menu-icon" aria-hidden="true"><use href="/icons.svg#menu"></use></svg><svg class="icon close-icon" aria-hidden="true"><use href="/icons.svg#close"></use></svg></button></nav></header>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><nav class="topbar" aria-label="Main navigation"><a class="brand" href="/index.html" aria-label="EyeTrackVR home"><img class="logo logo-light" src="/assets/logo_tile.svg" alt="" width="28" height="28"><img class="logo logo-dark" src="/assets/logo_no_bg.svg" alt="" width="24" height="24"><span>EyeTrack<span class="brand-vr">VR</span></span></a><div class="nav-menu" id="nav-menu"><ul class="nav-links"><li><a class="nav-link" href="https://docs.eyetrackvr.dev/">Documentation</a></li><li><a class="nav-link" href="https://github.com/EyeTrackVR/EyeTrackVR/releases">Download</a></li><li><a class="nav-link" href="https://store.eyetrackvr.dev/">Store</a></li><li><a class="nav-link" href="https://store.eyetrackvr.dev/pages/contact">Contact</a></li><li><a class="nav-link" href="https://ko-fi.com/prohurtz" target="_blank" rel="noopener noreferrer">Donate</a></li></ul><div class="nav-appearance" hidden><span class="nav-appearance-label">Appearance</span><button class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Dark theme" title="Toggle dark mode"><span class="check"><svg class="icon sun-icon" aria-hidden="true"><use href="/icons.svg#sun"></use></svg><svg class="icon moon-icon" aria-hidden="true"><use href="/icons.svg#moon"></use></svg></span></button></div><div class="nav-social"><a class="social-link" href="https://github.com/eyetrackvr" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="/icons.svg#github"></use></svg></a><a class="social-link" href="https://discord.gg/e9QfQQC6Cn" target="_blank" rel="noopener noreferrer" aria-label="Discord"><svg class="icon" aria-hidden="true"><use href="/icons.svg#discord"></use></svg></a></div></div><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false" hidden><svg class="icon menu-icon" aria-hidden="true"><use href="/icons.svg#menu"></use></svg><svg class="icon close-icon" aria-hidden="true"><use href="/icons.svg#close"></use></svg></button></nav></header>
 <main id="main" class="shell">
     <section class="hero hero-single" aria-labelledby="hero-title">
         <div class="hero-content">
@@ -34,10 +34,9 @@
         <article class="feature"><h2><a href="https://discord.gg/e9QfQQC6Cn">The community.</a></h2><p>Ask a question, find a mount for your headset, or show off your build.</p></article>
     </section>
 </main>
-<footer class="site-footer shell">
-    <a class="footer-brand" href="/index.html">EyeTrack<span class="brand-vr">VR</span></a>
-    <p><span class="footer-copy-full">Built by the EyeTrackVR community.</span><span class="footer-copy-short">Community built.</span></p>
-    <span class="copyright">&copy; 2026<span class="copyright-name"> EyeTrackVR</span></span>
+<footer class="site-footer">
+    <p>Built by the EyeTrackVR community.</p>
+    <p>Copyright &copy; 2026 EyeTrackVR</p>
 </footer>
 </body>
 </html>

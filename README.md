@@ -1,10 +1,12 @@
 # ETVR-Landing-Page
 
-Static landing page for EyeTrackVR. Built with HTML, CSS, an SVG icon sprite, and small JavaScript enhancements for the light/dark theme toggle and a mobile hamburger menu. Navigation and content remain usable without JavaScript.
+Static landing page for EyeTrackVR. Built with HTML, CSS, an SVG icon sprite, and small JavaScript enhancements for the light/dark theme switch and a mobile hamburger menu. Navigation and content remain usable without JavaScript.
 
 ## Style
 
-The page shares its palette and type with the docs site ([EyeTrackVR-Docs](https://github.com/EyeTrackVR/EyeTrackVR-Docs), `vitepress/docs/src/styles/theme.css`): warm paper, near-black ink, the EyeTrackVR purple as the one accent, and Atkinson Hyperlegible for text. It opens in light mode; the toggle in the header switches to dark and remembers the choice. Keep it plain: no glows, gradients or decorative icons. If the tokens at the top of `styles.css` change, change them in the docs theme too.
+The page shares its palette and type with the docs site ([EyeTrackVR-Docs](https://github.com/EyeTrackVR/EyeTrackVR-Docs), `vitepress/docs/src/styles/theme.css`): warm paper, near-black ink, the EyeTrackVR purple as the one accent, and Atkinson Hyperlegible for text. It opens in light mode; the switch in the header changes to dark and remembers the choice. The choice is shared with the docs through an `etvr-theme` cookie on `eyetrackvr.dev` that both sites read and write (docs side: `.vitepress/seo.js` and `.vitepress/theme/index.ts`), so switching on one site carries to the other; `localStorage` is the fallback when cookies are off. Keep it plain: no glows, gradients or decorative icons. If the tokens at the top of `styles.css` change, change them in the docs theme too.
+
+The layout is measured against the docs as well, so moving between the two sites does not shift anything. The header copies the VitePress nav bar: 64px tall, full width with 32px gutters, 16px brand, 14px links, the same pill theme switch, then the GitHub and Discord icons; below 768px it becomes the same full-screen menu. The content column, heading sizes and section spacing come from the docs home page (`vitepress/docs/src/vue/home/Home.vue`), and the footer is the docs' two centred lines.
 
 ## Local preview
 
@@ -16,13 +18,13 @@ The page respects reduced-motion preferences and include accessible icon labels,
 
 ## Icons
 
-`icons.svg` is a sprite built from official icon packs, with one exception: [Lucide](https://lucide.dev) for interface icons and [Phosphor Icons](https://phosphoricons.com) for the Discord mark. The GitHub mark is the site's original outline drawing, kept so it matches the line style. A comment at the top of the sprite maps each id to its source icon. To add or swap one, copy it from the pack and keep the pack's licence notice current in `ICON-LICENSES.md`. Stroke width, caps and joins are set in `styles.css` (`.icon`), so Lucide icons are used without their own stroke attributes.
+`icons.svg` is a sprite of [Lucide](https://lucide.dev) interface icons, with two exceptions: the GitHub and Discord marks are the project's own outline drawings, the same ones the docs use, so the header icons match across both sites. The sun and moon inside the theme switch are also not Lucide: they are the VitePress switch's own icons, for the same reason. A comment at the top of the sprite maps each id to its source icon. To add or swap one, copy it from the pack and keep the pack's licence notice current in `ICON-LICENSES.md`. Stroke width, caps and joins are set in `styles.css` (`.icon`), so Lucide icons are used without their own stroke attributes.
 
 The favicon files are separate:
 
 `assets/favicon-32.png`, `assets/favicon.png` and `assets/apple-touch-icon.png` are generated from `logo_no_bg.png`. The logo is white on transparent, so each tile puts it on a dark background, otherwise it disappears in a light browser tab. Regenerate them if the logo ever changes.
 
-The header logo is `assets/logo_tile.svg`, the white logo on a rounded dark tile, in both themes. It comes from the docs repo.
+The header logo is the white mark: `assets/logo_tile.svg` (on a rounded dark tile) in light mode and `assets/logo_no_bg.svg` (on its own) in dark mode. Both come from the docs repo.
 
 ## Link previews
 

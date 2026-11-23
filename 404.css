@@ -1,7 +1,5 @@
 /* 404 page only. Everything else comes from styles.css. */
-.hero-single { grid-template-columns: minmax(0, 1fr); padding-block: 88px 72px; }
+.hero-single { grid-template-columns: minmax(0, 1fr); }
 .hero-single .hero-description { max-width: 60ch; }
-.hero-single ~ .features { margin-bottom: 40px; }
-.feature h2 a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); transition: text-decoration-color .15s; }
+.feature h2 a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); transition: text-decoration-color .15s; }
 .feature h2 a:hover, .feature h2 a:focus-visible { text-decoration-color: currentColor; }
-@media (max-width: 760px) { .hero-single { padding-block: 54px 50px; } }

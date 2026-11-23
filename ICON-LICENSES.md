@@ -4,7 +4,7 @@ The icons in `icons.svg` are taken from these packs. Their licence notices are r
 
 ## Lucide (interface icons)
 
-https://lucide.dev, ISC licence. `arrow-right`, `arrow-up-right`, `download`, `moon`, `sun` and `x` are derived from Feather and fall under the MIT licence below.
+https://lucide.dev, ISC licence. `arrow-right`, `arrow-up-right`, `download` and `x` are derived from Feather and fall under the MIT licence below.
 
 ```
 ISC License
@@ -52,14 +52,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## Phosphor Icons (Discord)
+## VitePress (theme switch)
 
-https://phosphoricons.com, MIT licence. The Discord mark is `discord-logo` (regular weight), @phosphor-icons/core v2.1.1. The logo itself remains a trademark of its owner.
+https://vitepress.dev, MIT licence. `sun` and `moon` are the two icons inside the VitePress default theme's appearance switch, so the switch matches the docs.
 
 ```
 MIT License
 
-Copyright (c) 2023 Phosphor Icons
+Copyright (c) 2019-present, Yuxi (Evan) You
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
